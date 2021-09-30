@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      height: 140px;
+      width: 140px;
+      background: url(../image/run.png) left no-repeat;
+      animation: loading 2s steps(12) infinite;
+    }
+
+    @keyframes loading {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: -1680px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

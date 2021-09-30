@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>地球月球</title>
+	<style>
+		.fred {
+			width: 400px;
+			height: 400px;
+			border: 1px solid black;
+			border-radius: 50%;
+			position: relative;
+			left: 50%;
+			margin-top: 200px;
+			margin-left: -200px;
+			animation: xz 5s linear infinite;
+		}
+
+		.redhz {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			border-radius: 50%;
+			margin: 350px auto;
+			box-shadow: 1px 1px 10px #FF0000;
+			position: absolute;
+			left: 150px;
+			top: -200px;
+		}
+
+		.ftwo {
+			width: 300px;
+			height: 300px;
+			border: 1px solid black;
+			border-radius: 50%;
+			position: relative;
+			left: 50%;
+			margin-top: 250px;
+			margin-left: -200px;
+			animation: xz 5s linear infinite;
+		}
+
+		@keyframes xz {
+			from {
+				transform: rotate(0deg);
+			}
+
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		.green {
+			width: 80px;
+			height: 80px;
+			background-color: green;
+			border-radius: 50%;
+			margin: 350px auto;
+			position: absolute;
+			left: 110px;
+			top: -248px;
+		}
+
+		.blue {
+			width: 30px;
+			height: 30px;
+			background-color: blue;
+			border-radius: 50%;
+			margin: 350px auto;
+			position: absolute;
+			left: -10px;
+			top: -248px;
+		}
+	</style>
+</head>
+<body>
+	<div class="fred">
+		<div class="redhz"></div>
+		<div class="ftwo">
+			<div class="green"></div>
+			<div class="blue"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body {
+				perspective: 1000px;
+			}
+			.box {
+				transform-style: preserve-3d;
+				position: relative;
+				margin: 50px auto;
+				width: 600px;
+				height: 600px;
+				/* border: 1px solid; */
+				
+				animation: qiu 3s linear infinite ;
+				/* transform: rotatex(30deg) rotatey(50deg); */
+			}
+			.box div{
+				background: currentcolor;
+				position: absolute;
+				/* width: 200px; */
+				/* height: 200px; */
+				left: 50%;
+				top: 50%;
+				margin-left: -100px;
+				margin-top: -100px;
+				/* font-size: 100px; */
+				/* text-align: center; */
+				/* line-height: 200px; */
+			}
+			/* .box:hover div{
+				box-shadow: 0px 0px 10px currentcolor;
+			} */
+			.box .a1{
+				width: 200px;
+				height: 200px;
+				color: red;
+				background: red;
+				transform: translatez(100px);
+			}
+			.box .a11{
+				width: 300px;
+				height: 300px;
+				margin-left: -150px;
+				margin-top: -150px;
+				color:#9eaaa7 ;
+				background:#9eaaa7;
+				transform: translatez(150px);
+				opacity: 50%;
+				animation: h1 1s linear infinite alternate-reverse;
+			}
+			.box .a2{
+				width: 200px;
+				height: 200px;
+				color: orange;
+				background: orange;
+				transform: rotatey(180deg) translatez(100px);
+			}
+			.box .a22{
+				width: 300px;
+				height: 300px;
+				margin-left: -150px;
+				margin-top: -150px;
+				color:#9eaaa7 ;
+				background:#9eaaa7;
+				transform: rotatey(180deg) translatez(150px);
+				opacity: 50%;
+				animation: h2 1s linear infinite alternate-reverse;
+			}
+			.box .a3{
+				width: 200px;
+				height: 200px;
+				color: yellow;
+				background: yellow;
+				transform: rotatex(90deg) translatez(100px);
+			}
+			.box .a33{
+				width: 300px;
+				height: 300px;
+				margin-left: -150px;
+				margin-top: -150px;
+				color:#9eaaa7 ;
+				background:#9eaaa7;
+				transform: rotatex(90deg) translatez(150px);
+				opacity: 50%;
+				animation: h3 1s linear infinite alternate-reverse;
+			}
+			.box .a4{
+				width: 200px;
+				height: 200px;
+				color: green;
+				background: green;
+				transform: rotatex(-90deg) translatez(100px);
+			}
+			.box .a44{
+				width: 300px;
+				height: 300px;
+				margin-left: -150px;
+				margin-top: -150px;
+				color:#9eaaa7 ;
+				background:#9eaaa7;
+				transform: rotatex(-90deg) translatez(150px);
+				opacity: 50%;
+				animation: h4 1s linear infinite alternate-reverse;
+			}
+			.box .a5{
+				width: 200px;
+				height: 200px;
+				color: blue;
+				background: blue;
+				transform: rotatey(90deg) translatez(100px);
+			}
+			.box .a55{
+				width: 300px;
+				height: 300px;
+				margin-left: -150px;
+				margin-top: -150px;
+				color:#9eaaa7 ;
+				background:#9eaaa7;
+				transform: rotatey(90deg) translatez(150px);
+				opacity: 50%;
+				animation: h5 1s linear infinite alternate-reverse;
+			}
+			.box .a6{
+				width: 200px;
+				height: 200px;
+				color: wheat;
+				background: wheat;
+				transform: rotatey(-90deg) translatez(100px);
+			}
+			.box .a66{
+				width: 300px;
+				height: 300px;
+				margin-left: -150px;
+				margin-top: -150px;
+				color:#9eaaa7 ;
+				background:#9eaaa7;
+				transform: rotatey(-90deg) translatez(150px);
+				opacity: 50%;
+				animation: h6 1s linear infinite alternate-reverse;
+			}
+			@keyframes h1{
+				from{
+					transform: translatez(150px);
+				}
+				to{
+					transform: translatez(200px);
+				}
+			}
+			@keyframes h2{
+				from{
+					transform: rotatey(180deg) translatez(150px);
+				}
+				to{
+					transform: rotatey(180deg) translatez(200px);
+				}
+			}
+			@keyframes h3{
+				from{
+					transform: rotatex(90deg) translatez(150px);
+				}
+				to{
+					transform: rotatex(90deg) translatez(200px);
+				}
+			}
+			@keyframes h4{
+				from{
+					transform: rotatex(-90deg) translatez(150px);
+				}
+				to{
+					transform: rotatex(-90deg) translatez(200px);
+				}
+			}
+			@keyframes h5{
+				from{
+					transform: rotatey(90deg) translatez(150px);
+				}
+				to{
+					transform: rotatey(90deg) translatez(200px);
+				}
+			}
+			
+			@keyframes h6{
+				from{
+					transform: rotatey(-90deg) translatez(150px);
+				}
+				to{
+					transform: rotatey(-90deg) translatez(200px);
+				}
+			}
+			@keyframes qiu{
+				from {
+					transform:rotatex(0deg) rotatey(0deg);
+				}
+				to{
+					transform: rotatex(360deg) rotatey(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="a1"><!-- 前 --></div>
+			<div class="a11"><!-- 前 --></div>
+			<div class="a2"><!-- 后 --></div>
+			<div class="a22"><!-- 后 --></div>
+			<div class="a3"><!-- 上 --></div>
+			<div class="a33"><!-- 上 --></div>
+			<div class="a4"><!-- 下 --></div>
+			<div class="a44"><!-- 下 --></div>
+			<div class="a5"><!-- 左 --></div>
+			<div class="a55"><!-- 左 --></div>
+			<div class="a6"><!-- 右 --></div>
+			<div class="a66"><!-- 右 --></div>
+		</div>
+	</body>
+</html>
