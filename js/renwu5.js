@@ -18,11 +18,11 @@ var flag = 0;
 imgs.onclick = function () {
   if (flag == 0) {
     input.type = "text";
-    eyes.src = "../image/2.png"; //睁眼图
+    eyes.src = "../image/eyesee.png"; //睁眼图
     flag = 1;
   } else {
     input.type = "password";
-    eyes.src = "../image/1.png"; //闭眼图
+    eyes.src = "../image/eyenone.png"; //闭眼图
     flag = 0;
   }
 };
