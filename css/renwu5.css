@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+/* 提示信息 */
+.Button {
+  width: 30px;
+  height: 30px;
+}
+.content {
+  background-color: yellow;
+  width: 300px;
+  height: 50px;
+  display: none;
+  border-radius: 15%;
+}
+/* 密码显示与隐藏 */
+p {
+  width: 100px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  /* margin: 20px auto; */
+  text-align: center;
+  line-height: 30px;
+}
+
+.kuang {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  /* margin: 100px auto; */
+}
+.input {
+  width: 150px;
+  height: 20px;
+  border: 0px white;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+#eyes {
+  width: 18px;
+  position: absolute;
+  top: 5px;
+  left: 130px;
+}
+
+/* 登陆框主体 */
+.login {
+  position: absolute;
+  width: 512px;
+  height: 284px;
+  z-index: 9999;
+  display: none;
+  background-color: white;
+  /* 这里要注意绝对定位的盒子怎么在屏幕显示居中 */
+  left: 50%;
+  margin-left: -256px;
+  margin-top: 142px;
+  border: 1px solid gray;
+}
+/* 登陆框标题 */
+.login-title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: move;
+}
+.login-title span a {
+  text-decoration: none;
+  border: 1px solid gray;
+  font-size: 12px;
+  color: black;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+
+/* 登陆表单 */
+
+.login-input {
+  margin: 20px 0 30px 0;
+}
+.login-input label {
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  width: 90px;
+  padding-left: 10px;
+  text-align: right;
+  font-size: 14px;
+}
+.login-input input.list-input {
+  height: 35px;
+  line-height: 35px;
+  width: 350px;
+  text-indent: 5px;
+}
+/* 登陆框登陆按钮 */
+.loginSubmit {
+  width: 260px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid gray;
+  background-color: white;
+  margin-left: 120px;
+}
+
+/* 遮盖层 */
+.bg {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: fixed;
+  opacity: 0.3;
+  /*-webkit-opacity: 0.3;*/
+  -moz-opacity: 0.3;
+  display: none;
+}
+
+/* 关键字 */
+#t-c {
+  width: 200px;
+  height: 150px;
+  border: 1px solid black;
+  margin-top: 30px;
+  position: absolute;
+}
+#t-c .a input {
+  width: 100px;
+  height: 20px;
+  margin: 0 auto;
+  position: relative;
+  left: 50px;
+  top: 50px;
+}
+
+/* 图片切换 */
+#sencend {
+  width: 451px;
+  height: 551px;
+  border: 1px solid;
+  margin-top: 200px;
+  position: absolute;
+}
+#sencend li {
+  display: block;
+  float: left;
+  width: 100px;
+  list-style: none;
+}
