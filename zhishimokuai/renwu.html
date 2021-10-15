@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      #t1 {
+        position: relative;
+      }
+
+      .info {
+        border: 1px solid orange;
+        border-radius: 10px;
+        margin: 0;
+        padding: 15px;
+        background: gold;
+        display: none;
+      }
+
+      .link {
+        position: fixed;
+        top: 10px;
+        right: 60px;
+      }
+
+      .login {
+        border: 1px solid;
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-right: -150px;
+        display: none;
+      }
+
+      .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+      }
+      /*	第四题*/
+      ul {
+        margin: 0;
+        /*padding: 0;*/
+        list-style: none;
+        padding: 10px 0;
+        display: flex;
+        width: 450px;
+        justify-content: space-around;
+      }
+      img {
+        display: block;
+      }
+      li {
+        width: 22%;
+      }
+      li img {
+        width: 100%;
+        cursor: pointer;
+        border: 2px solid #ffffff;
+      }
+      li .active {
+        border-color: #0000ff;
+      }
+    /*  第五题*/
+      .eye{
+        background: url("../image/eyenone.png");
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      .eye.on{
+        background: url("../image/eyesee.png");
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 第一题 -->
+    <div id="t1">
+      <input type="checkbox" id="box" /><label for="box">十天内免登录</label>
+      <p class="info">
+        隐藏信息隐藏信息隐藏信息隐藏信息隐藏信息隐藏信息隐藏信息隐藏信息隐藏信息隐藏信息隐藏信息
+      </p>
+    </div>
+    <!-- 第二题 -->
+    <div id="t2">
+      <a href="" class="link">登录</a>
+      <div class="login">
+        <span class="close">&times;</span>
+      </div>
+    </div>
+    <!-- 第三题 -->
+    <div id="t3">
+      <label for="search"></label><input type="text" value="搜索" id="search" />
+    </div>
+    <!--第四题-->
+    <div id="t4">
+      <img src="../image/1.2.png" alt="大图片" class="big" />
+      <ul>
+        <li><img src="../image/1.1.png" alt="1" class="small active" /></li>
+        <li><img src="../image/2.2.png" alt="1" class="small" /></li>
+        <li><img src="../image/3.3.png" alt="1" class="small" /></li>
+        <li><img src="../image/4.4.png" alt="1" class="small" /></li>
+      </ul>
+    </div>
+    <!--第四题-->
+    <div id="t5">
+      <input type="password" value="" class="pwd">
+        <i class="eye"></i>
+    </div>
+    <script>
+      // 第一题
+      let box = document.querySelector("#box");
+      let info = document.querySelector(".info");
+      /* box.onmouseover = function () {
+        info.style.display = "block";
+      }*/
+      box.addEventListener("mouseover", function () {
+        info.style.display = "block";
+      });
+      /*box.onmouseout = function () {
+        info.style.display = "none";
+      }*/
+      box.addEventListener("mouseout", function () {
+        info.style.display = "none";
+      });
+      // 第二题
+      let link = document.querySelector(".link");
+      let login = document.querySelector(".login");
+      let close = document.querySelector(".close");
+      link.addEventListener("click", function (event) {
+        //取消默认操作
+        event.preventDefault();
+        login.style.display = "block";
+      });
+      close.addEventListener("click", function () {
+        login.style.display = "none";
+      });
+      //  第三题
+      let search = document.querySelector("#search");
+      let oldValue = search.value;
+      search.addEventListener("focus", function () {
+        if (this.value === oldValue) {
+          this.value = "";
+        }
+      });
+      search.addEventListener("blur", function () {
+        if (this.value === "") {
+          this.value = oldValue;
+        }
+      });
+      //	第四题
+      let big = document.querySelector(".big");
+      let smalls = document.querySelectorAll(".small");
+      for (let i = 0; i < smalls.length; i++) {
+        // console.log(i);
+        smalls[i].addEventListener("mouseover", function () {
+          big.src = this.src;
+          //	全清
+          for (let j = 0; j < smalls.length; j++) {
+            smalls[j].classList.remove("active");
+          }
+          //this指鼠标经过的图片
+          this.classList.add("active");
+        });
+      }
+    //  第五题
+      const pwd = document.querySelector('.pwd');
+      const eye = document.querySelector('.eye');
+      eye.addEventListener('click',function () {
+        this.classList.toggle('on'); //toggle 切换
+        if (this.classList.contains('on')) {
+          pwd.type = 'text';
+        }else {
+          pwd.type = 'password'
+        }
+       //第二种方法
+       /*if (pwd.type === 'password'){
+         pwd.type = 'text';
+         this.classList.add('on');
+       }else {
+         pwd.type = 'password';
+         this.classList.remove('on');
+       }*/
+      })
+    </script>
+
+  </body>
+</html>
