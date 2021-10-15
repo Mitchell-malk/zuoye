@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      table,th,td {
+        border: 1px solid;
+      }
+      tr, td {
+        width: 70px;
+        height: 30px;
+      }
+      table {
+        border-collapse: collapse;
+        /*margin-top: 1px;*/
+      }
+      ul{
+        line-height: 30px;
+      }
+      li{
+        float: left;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 9*9
+      document.write('<h2>'+'第一题'+'</h2>');
+      document.write("<table>");
+      for (let i = 1; i < 10; i++) {
+        document.write("<tr>");
+        for (let j = 1; j <= i; j++) {
+          document.write("<td>" + i + "x" + j + "=" + i * j + "</td>");
+        }
+        for (let q = i; q < 9; q++) {
+          document.write("<td></td>");
+        }
+        document.write("</tr>");
+      }
+      document.write('</table>');
+      document.write('<hr/>');
+    //  12*12
+      document.write('<h2>'+'第二题'+'</h2>');
+      let x='x';
+      document.write("<table>");
+      document.write('<tr>');
+      document.write("<td>"+x+"</td>");
+      for(let a=0;a<=12;a++){
+        document.write("<td>"+a+"</td>")
+      }
+      document.write("</tr>");
+      for(let i=0;i<=12;i++){
+        document.write('<tr>');
+        document.write("<td>"+i+"</td>");
+        for(let j=0;j<=12;j++){
+          document.write("<td>"+i*j+"</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+      document.write('<br>');
+      document.write('<br>');
+      document.write('<hr/>');
+    //输出0-99的数
+      document.write('<h2>'+'第三题'+'</h2>');
+      let num;
+      for(let i=0;i<10;i++){
+        for(let j=0;j<10;j++){
+          num = i;
+          document.write(num);
+          document.write(j+' ');
+        }
+        document.write('<br>');
+      }
+      document.write('<hr/>');
+    //第四题
+      document.write('<h2>'+'第四题'+'</h2>');
+      let num1=0,num2=0,num3=0;
+      for(let x=1;x<=100;x++){
+        if(x%3===0 && x%5===0){
+          document.write(x+"C"+"  ");
+          num1+=1;
+        }else if(x%3===0){
+          document.write(x+"A"+"  ");
+          num2+=1;
+        }else if(x%5===0){
+          document.write(x+"B"+"  ");
+          num3+=1;
+        }
+        else{
+          document.write(x+"  ");
+        }
+      }
+      document.write('<br>');
+      document.write("A有"+num1+"个"+"、"+"B有"+num2+"个"+"、"+"C有"+num3+"个");
+      document.write('<hr/>');
+      //第五题
+      document.write('<h2>'+'第五题'+'</h2>');
+      let a=12;
+      let b=3;
+      document.write('<br>');
+      document.write("a的值为："+a );
+      document.write('<br>');
+      document.write("b的值为："+b );
+      document.write('<br>');
+      a>b?(document.write("a大于b")):((a<b)?(document.write("a小于b")):(document.write("a等于b")));
+      document.write('<hr/>');
+      //第六题
+      document.write('<h2>'+'第六题'+'</h2>');
+      let c=1;
+      let d=2;
+      let e=String(c)+String(d);
+      document.write(e);
+    </script>
+  </body>
+</html>
