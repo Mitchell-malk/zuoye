@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, td, th {
+            border: 1px solid #ccc;
+        }
+
+        table {
+            /*合并边框线*/
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        .t1 td {
+            width: 80px;
+        }
+
+        .t2 td {
+            width: 40px;
+        }
+        .t2 th {
+            width: 40px;
+            height: 30px;
+        }
+    </style>
+</head>
+    <body>
+        <script>
+            let table = document.createElement('table');
+            table.classList.add('t2');
+            for (let i = 0; i < 3; i++) {
+                let tr = document.createElement('tr');
+                for (let j = 0; j < 2; j++) {
+                    let td = document.createElement('td');
+                    td.textContent = '123';
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            document.write('<h1>JS作业</h1>');
+            document.write('<h2>第一题</h2>');
+            document.write('<table class="t1">');
+            //输出9组tr
+            for (let i = 1; i <= 9; i++) {
+                document.write('<tr>');
+                //输出9组td
+                for (let j = 1; j <= 9; j++) {
+                    document.write('<td>');
+                    //填写数据
+                    if (j > i) {
+                        document.write('&nbsp;');
+                    } else {
+                        document.write(`${j}&times${i}=${j * i}`);
+                    }
+                    document.write('</td>');
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+            document.write('<hr/>');
+            //第二题
+            document.write('<h2>第二题</h2>');
+            document.write('<table class="t2">');
+            document.write('<tr>');
+            document.write('<th>');
+            document.write('&times');
+            for (let i = 0; i <= 12; i++) {
+                document.write('<th>');
+                document.write(i);
+                document.write('</th>');
+            }
+            document.write('</th>');
+            document.write('</tr>');
+            for (let j = 0; j <= 12; j++) {
+                document.write('<tr>');
+                document.write('<th>');
+                document.write(j);
+                document.write('</th>');
+                for (let k = 0; k <= 12; k++) {
+                    document.write('<td>');
+                    document.write(j * k);
+                    document.write('</td>');
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+            document.write('<hr/>');
+        //    第三题
+            document.write('<h2>第三题</h2>');
+            for (let i = 0; i < 100; i++) {
+                if (i<10){
+                    document.write(0);
+                }
+                document.write(i + ' ');
+                if(i % 10 === 9){
+                    document.write('<br/>');
+                }
+            }
+            document.write('<hr/>');
+        //    第四题
+            document.write('<h2>第四题</h2>');
+            let num1 = 0;
+            let num2 = 0;
+            let num3 = 0;
+            for (let i = 1; i <= 100; i++) {
+                document.write(i);
+                if (i % 3 === 0 && i % 5 === 0) {
+                    document.write('C');
+                    num3++;
+                }else if (i % 3 === 0) {
+                    document.write('A');
+                    num1++;
+                }else if (i % 5 === 0) {
+                    document.write('B');
+                    num2++;
+                }
+                /*if (i % 3 === 0) {
+                    document.write('A');
+                    num1++;
+                }
+                if (i % 5 === 0) {
+                    document.write('B');
+                    num2++;
+                }
+                if (i % 3 === 0 && i % 5 === 0) {
+                    document.write('C');
+                    num3++;
+                }*/
+                document.write(' ');
+            }
+            document.write(`<br>A有${num1}个,B有${num2}个,C有${num3}个`);
+            document.write('<hr/>');
+            document.write('<h2>第五（一）题</h2>');
+            let a = 12;
+            let b = 3;
+            let c = a > b ? '大':(a < b ?'小':'等');
+            document.write(`a的值是${a},b的值是${b},a${c}于b`);
+            document.write('<hr/>');
+            document.write('<h2>第五（二）题</h2>');
+            let a1 = 1;
+            let b1 = 2;
+            // let c1 = String(a1) + String(b1);
+            let c1 = '' + a1 + b1;
+            document.write(c1);
+            document.write('<hr/>');
+        </script>
+    </body>
+</html>
