@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h2>拓展</h2>
+        <label for="a">请输入数字a：</label>
+        <input id="a" type="text">
+    </div>
+    <div>
+        <label for="b">请输入数字b：</label>
+        <input id="b" type="text">
+    </div>
+    <div>
+        <input id="submit" type="submit">
+    </div>
+    <p></p>
+  <script>
+      const a=document.querySelector('#a');
+      const b=document.querySelector('#b');
+      const para=document.querySelector('p');
+      const submit=document.querySelector('#submit');
+      submit.onclick=function(e){
+          if(a.value==='' || b.value===''){
+              e.preventDefault(); //取消默认操作，阻止表单提交
+              para.textContent='请输入a和b的值';
+          }else{
+              if(isNaN(a.value) || isNaN(b.value)){
+                  e.preventDefault(); //取消默认操作，阻止表单提交
+                  para.textContent='请输入数值型a和b';
+              }else{
+                  let aa=Number(a.value);
+                  let bb=Number(b.value);
+                  if(aa>bb){
+                      para.textContent=`a的值为${aa},b的值为${bb},a大于b`;
+                  }else if(aa<bb){
+                      para.textContent=`a的值为${aa},b的值为${bb},a小于b`;
+                  }else{
+                      para.textContent=`a的值为${aa},b的值为${bb},a等于b`;
+                  }
+              }
+          }
+      }
+      document.write('<hr>');
+    /*
+    document.write('<h2> 第一题 </h2>');
+    let a = 1;
+    let b = 2;
+    if (a < b){
+      document.write('a大于b');
+    }else if (a > b){
+        document.write('a小于b');
+    }else {
+        document.write('a等于b');
+    }
+    document.write('<hr>');
+    */
+      document.write('<h2> 第二题 </h2>');
+      let a1=12;
+      let b1=3;
+      if(a1<b1){
+          document.write(`a的值是${a1},b的值是${b1},a小于b`);
+      }else if(a1>b1){
+          document.write(`a的值是${a1},b的值是${b1},a大于b`);
+      }else{
+          document.write(`a的值是${a1},b的值是${b1},a等于b`);
+      }
+      document.write('<hr>');
+
+
+    /*
+    document.write('<h2> 第二题 </h2>');
+    let c = 10;
+    if (c % 5 === 0){
+        document.write('可以被五整除');
+    }else {
+        document.write('不可以被五整除');
+    }
+    document.write('<hr/>');
+    */
+    document.write('<h2> 第三题 </h2>');
+    for (let i = 0; i <= 100 ; i++) {
+        if (i % 2 === 0){
+            document.write(i + ' ');
+        }
+    }
+    document.write('<hr/>');
+
+    document.write('<h2> 第四题 </h2>');
+
+    let i = 0;
+    while (i <= 100){
+        if (i % 7 ===0){
+            document.write(i + ' ');
+        }
+        i++;
+    }
+    document.write('<hr/>');
+
+    document.write('<h2>第五题</h2>');
+      let a5=16;
+      let b5=14;
+      let c5=30;
+      if(a5>b5){
+          if(a5>c5){
+              document.write("最大值为"+a5);
+          }else{
+              document.write("最大值为"+c5);
+          }
+      }else{
+          if(b5>c5){
+              document.write("最大值为"+b5);
+          }else{
+              document.write("最大值为"+c5);
+          }
+      }
+      document.write('<hr>');
+
+      document.write('<h2>练习3第一题</h2>');
+      let even='';
+      let odd='';
+      for(let i=0;i<=100;i++){
+          if(i%2===0){
+              even=even+i+' ';
+          }else{
+              odd=odd+i+' ';
+          }
+      }
+      document.write("100以内的偶数是:"+even);
+      document.write('<br>');
+      document.write("100以内的奇数是:"+odd);
+      document.write('<hr>');
+
+      document.write('<h2>练习3第二题</h2>');
+      let y=0;
+      let z='';
+      let test=(...q)=>{
+          for(let i=q.length-1;i>=0;i--){
+              if(i===0){
+                  z=z+q[i];
+              }else{
+                  z=z+q[i]+'+';
+              }
+              y+=q[i];
+          }
+          return z+'='+y;
+      }
+      document.write(test(1,2,3,4));
+      document.write('<hr>');
+  </script>
+</body>
+</html>
