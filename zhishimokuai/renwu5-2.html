@@ -19,7 +19,22 @@
     </div>
     <p></p>
   <script>
-      const a=document.querySelector('#a');
+      document.write("第一题");
+      document.write('<br>');
+      let Num = 1;
+      let Num1 = 2;
+      let Num2 = '';
+      if (Num>Num1){
+          Num2 = '大';
+      }
+      if (Num<Num1){
+          Num2 = '小';
+      }else{
+          Num2 = '等';
+      }
+      document.write(`a的值是${Num}&nbsp;&nbsp;&nbsp;b的值是${Num1}&nbsp; &nbsp;&nbsp;a${Num2}b`);
+      document.write('<hr>');
+      /*const a=document.querySelector('#a');
       const b=document.querySelector('#b');
       const para=document.querySelector('p');
       const submit=document.querySelector('#submit');
@@ -44,7 +59,7 @@
               }
           }
       }
-      document.write('<hr>');
+      document.write('<hr>');*/
     /*
     document.write('<h2> 第一题 </h2>');
     let a = 1;
@@ -58,7 +73,21 @@
     }
     document.write('<hr>');
     */
-      document.write('<h2> 第二题 </h2>');
+      document.write("第二题");
+      document.write('<br>');
+      let Num3 = 10;
+      let Num4 = '';
+      let Num5 = '';
+      if (Num3%5!==0){
+          Num4 = '不能被5整除';
+          document.write(`a的值是${Num3}${Num4}`);
+      }else{
+          Num5 = `整除的结果是${Num3/5}`;
+          document.write(`a的值是${Num3}a可以被5整除整除的结果是${Num5}`);
+      }
+
+      document.write('<hr>');
+     /* document.write('<h2> 第二题 </h2>');
       let a1=12;
       let b1=3;
       if(a1<b1){
@@ -68,7 +97,7 @@
       }else{
           document.write(`a的值是${a1},b的值是${b1},a等于b`);
       }
-      document.write('<hr>');
+      document.write('<hr>');*/
 
 
     /*
@@ -81,26 +110,66 @@
     }
     document.write('<hr/>');
     */
-    document.write('<h2> 第三题 </h2>');
+      document.write("第三题");
+      document.write('<br>');
+      let a = '';
+      for(let i = 0; i<100; i++){
+          if (i%2){
+              continue;
+          }
+          a+=i+' ';
+      }
+      document.write(a);
+      document.write('<hr>');
+    /*document.write('<h2> 第三题 </h2>');
     for (let i = 0; i <= 100 ; i++) {
         if (i % 2 === 0){
             document.write(i + ' ');
         }
     }
-    document.write('<hr/>');
+    document.write('<hr/>');*/
+      document.write("第四题");
+      document.write('<br>');
+      let aa = 0;
+      let s = '';
+      while (aa<100){
+          s+=aa+' ';
+          aa+=7;
+      }
+      document.write(s);
+      document.write('<hr>');
 
-    document.write('<h2> 第四题 </h2>');
-
-    let i = 0;
-    while (i <= 100){
+   /* document.write('<h2> 第四题 </h2>');
+        let i = 0;
+        while (i <= 100){
         if (i % 7 ===0){
             document.write(i + ' ');
         }
         i++;
-    }
-    document.write('<hr/>');
-
-    document.write('<h2>第五题</h2>');
+      }
+    document.write('<hr/>');*/
+      document.write("第五题");
+      document.write('<br>');
+      let q = 12;
+      let w = 13;
+      let e = 14;
+      let max = q;
+      // if (q>w && q>e){
+      // 	document.write('a最大');
+      // }else if (w>q && w>e){
+      // 	document.write("b最大");
+      // }else{
+      // 	document.write('c最大');
+      // }
+      if (w>max){
+          max=w;
+      }
+      if (e>max){
+          max=e;
+      }
+      document.write("最大值"+max);
+      document.write('<hr>');
+    /*document.write('<h2>第五题</h2>');
       let a5=16;
       let b5=14;
       let c5=30;
@@ -117,7 +186,7 @@
               document.write(""+c5);
           }
       }
-      document.write('<hr>');
+      document.write('<hr>');*/
 
       document.write('<h2>练习3第一题</h2>');
       let even='';
@@ -133,7 +202,42 @@
       document.write('<hr>');
 
       document.write('<h2>练习3第二题</h2>');
-      let y=0;
+      function test(...arr) {
+          // console.log(arr);
+          let str = '';
+          let num = 0;
+          str = arr.reverse().join('+');  //所有参数逆向排列并用+连接
+          return str + '=' + num;
+      }
+      /*function test(){
+      //    参数对象arguments保存在调用函数是提供的所有实参。
+          let str = '';
+          let num = 0;
+
+          let arr = [];
+          for (let i = 0; i <arguments.length ; i++) {
+            arr[i] = arguments[i];
+            num += arguments[i];
+          }
+          arr.reverse();    //反向排列数组元素
+          str = arr.join('+');
+          return str + '=' + num;
+          /!*for (let i = arguments.length-1; i >= 0; i--) {
+              str += arguments[i] + (i > 0?'+':'=');
+              /!*if (i > 0){
+                  str += '+';
+              }*!/
+              num += arguments[i];
+          }
+          return str + num;//str + '=' + num;*!/
+      }*/
+      document.write(test(1,2,3,4,5,6,7,8,9));
+      document.write('<br>');
+      document.write(test(3,6,9,1,4,7));
+      document.write('<br>');
+      document.write(test(1));
+      document.write('<hr>');
+      /*let y=0;
       let z='';
       let test=(...q)=>{
           for(let i=q.length-1;i>=0;i--){
@@ -147,7 +251,7 @@
           return z+'='+y;
       }
       document.write(test(1,2,3,4));
-      document.write('<hr>');
+      document.write('<hr>');*/
   </script>
 </body>
 </html>
