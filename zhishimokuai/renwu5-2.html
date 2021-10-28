@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <h2>第一题</h2>
-        <label for="a">请输入数字a：</label>
-        <input id="a" type="text">
+      <h2>第一题</h2>
+      <label for="a">请输入数字a：</label>
+      <input id="a" type="text" />
     </div>
     <div>
-        <label for="b">请输入数字b：</label>
-        <input id="b" type="text">
+      <label for="b">请输入数字b：</label>
+      <input id="b" type="text" />
     </div>
     <div>
-        <input id="submit" type="submit">
+      <input id="submit" type="submit" />
     </div>
     <p></p>
-  <script>
+    <script>
       document.write("第一题");
-      document.write('<br>');
+      document.write("<br>");
       let Num = 1;
       let Num1 = 2;
-      let Num2 = '';
-      if (Num>Num1){
-          Num2 = '大';
+      let Num2 = "";
+      if (Num > Num1) {
+        Num2 = "大";
       }
-      if (Num<Num1){
-          Num2 = '小';
-      }else{
-          Num2 = '等';
+      if (Num < Num1) {
+        Num2 = "小";
+      } else {
+        Num2 = "等";
       }
-      document.write(`a的值是${Num}&nbsp;&nbsp;&nbsp;b的值是${Num1}&nbsp; &nbsp;&nbsp;a${Num2}b`);
-      document.write('<hr>');
+      document.write(
+        `a的值是${Num}&nbsp;&nbsp;&nbsp;b的值是${Num1}&nbsp; &nbsp;&nbsp;a${Num2}b`
+      );
+      document.write("<hr>");
       /*const a=document.querySelector('#a');
       const b=document.querySelector('#b');
       const para=document.querySelector('p');
@@ -60,7 +62,7 @@
           }
       }
       document.write('<hr>');*/
-    /*
+      /*
     document.write('<h2> 第一题 </h2>');
     let a = 1;
     let b = 2;
@@ -74,20 +76,20 @@
     document.write('<hr>');
     */
       document.write("第二题");
-      document.write('<br>');
+      document.write("<br>");
       let Num3 = 10;
-      let Num4 = '';
-      let Num5 = '';
-      if (Num3%5!==0){
-          Num4 = '不能被5整除';
-          document.write(`a的值是${Num3}${Num4}`);
-      }else{
-          Num5 = `整除的结果是${Num3/5}`;
-          document.write(`a的值是${Num3}a可以被5整除整除的结果是${Num5}`);
+      let Num4 = "";
+      let Num5 = "";
+      if (Num3 % 5 !== 0) {
+        Num4 = "不能被5整除";
+        document.write(`a的值是${Num3}${Num4}`);
+      } else {
+        Num5 = `整除的结果是${Num3 / 5}`;
+        document.write(`a的值是${Num3}a可以被5整除整除的结果是${Num5}`);
       }
 
-      document.write('<hr>');
-     /* document.write('<h2> 第二题 </h2>');
+      document.write("<hr>");
+      /* document.write('<h2> 第二题 </h2>');
       let a1=12;
       let b1=3;
       if(a1<b1){
@@ -99,8 +101,7 @@
       }
       document.write('<hr>');*/
 
-
-    /*
+      /*
     document.write('<h2> 第二题 </h2>');
     let c = 10;
     if (c % 5 === 0){
@@ -111,17 +112,17 @@
     document.write('<hr/>');
     */
       document.write("第三题");
-      document.write('<br>');
-      let a = '';
-      for(let i = 0; i<100; i++){
-          if (i%2){
-              continue;
-          }
-          a+=i+' ';
+      document.write("<br>");
+      let a = "";
+      for (let i = 0; i < 100; i++) {
+        if (i % 2) {
+          continue;
+        }
+        a += i + " ";
       }
       document.write(a);
-      document.write('<hr>');
-    /*document.write('<h2> 第三题 </h2>');
+      document.write("<hr>");
+      /*document.write('<h2> 第三题 </h2>');
     for (let i = 0; i <= 100 ; i++) {
         if (i % 2 === 0){
             document.write(i + ' ');
@@ -129,17 +130,17 @@
     }
     document.write('<hr/>');*/
       document.write("第四题");
-      document.write('<br>');
+      document.write("<br>");
       let aa = 0;
-      let s = '';
-      while (aa<100){
-          s+=aa+' ';
-          aa+=7;
+      let s = "";
+      while (aa < 100) {
+        s += aa + " ";
+        aa += 7;
       }
       document.write(s);
-      document.write('<hr>');
+      document.write("<hr>");
 
-   /* document.write('<h2> 第四题 </h2>');
+      /* document.write('<h2> 第四题 </h2>');
         let i = 0;
         while (i <= 100){
         if (i % 7 ===0){
@@ -149,7 +150,7 @@
       }
     document.write('<hr/>');*/
       document.write("第五题");
-      document.write('<br>');
+      document.write("<br>");
       let q = 12;
       let w = 13;
       let e = 14;
@@ -161,15 +162,15 @@
       // }else{
       // 	document.write('c最大');
       // }
-      if (w>max){
-          max=w;
+      if (w > max) {
+        max = w;
       }
-      if (e>max){
-          max=e;
+      if (e > max) {
+        max = e;
       }
-      document.write("最大值"+max);
-      document.write('<hr>');
-    /*document.write('<h2>第五题</h2>');
+      document.write("最大值" + max);
+      document.write("<hr>");
+      /*document.write('<h2>第五题</h2>');
       let a5=16;
       let b5=14;
       let c5=30;
@@ -188,26 +189,26 @@
       }
       document.write('<hr>');*/
 
-      document.write('<h2>练习3第一题</h2>');
-      let even='';
-      let odd='';
-      for(let i=0;i<=100;i++){
-          if(i%2===0){
-              even=even+i+' ';
-          }else{
-              odd=odd+i+' ';
-          }
+      document.write("<h2>练习3第一题</h2>");
+      let even = "";
+      let odd = "";
+      for (let i = 0; i <= 100; i++) {
+        if (i % 2 === 0) {
+          even = even + i + " ";
+        } else {
+          odd = odd + i + " ";
+        }
       }
       document.write(`100以内的偶数：${even}<br>100以内的奇数：${odd}`);
-      document.write('<hr>');
+      document.write("<hr>");
 
-      document.write('<h2>练习3第二题</h2>');
+      document.write("<h2>练习3第二题</h2>");
       function test(...arr) {
-          // console.log(arr);
-          let str = '';
-          let num = 0;
-          str = arr.reverse().join('+');  //所有参数逆向排列并用+连接
-          return str + '=' + num;
+        // console.log(arr);
+        let str = "";
+        let num = 0;
+        str = arr.reverse().join("+"); //所有参数逆向排列并用+连接
+        return str + "=" + num;
       }
       /*function test(){
       //    参数对象arguments保存在调用函数是提供的所有实参。
@@ -231,12 +232,12 @@
           }
           return str + num;//str + '=' + num;*!/
       }*/
-      document.write(test(1,2,3,4,5,6,7,8,9));
-      document.write('<br>');
-      document.write(test(3,6,9,1,4,7));
-      document.write('<br>');
+      document.write(test(1, 2, 3, 4, 5, 6, 7, 8, 9));
+      document.write("<br>");
+      document.write(test(3, 6, 9, 1, 4, 7));
+      document.write("<br>");
       document.write(test(1));
-      document.write('<hr>');
+      document.write("<hr>");
       /*let y=0;
       let z='';
       let test=(...q)=>{
@@ -252,6 +253,6 @@
       }
       document.write(test(1,2,3,4));
       document.write('<hr>');*/
-  </script>
-</body>
+    </script>
+  </body>
 </html>
