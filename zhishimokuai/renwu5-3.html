@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        document.write('<h2>第一题</h2>');
+        function test(...arr) {
+            // console.log(arr);
+            let str;
+            str = arr.reverse().join(".");
+            return str ;
+        }
+        document.write(test(11, 22, 33, 44, 55, 66, 77, 88, 99));
+        document.write('<br>');
+        document.write(test('bd', 'pr', 'mg', 'fd', 'da', 'tf', 'nb', 'lw'));
+        document.write('<h2>第二题</h2>');
+        let ip = '192.168.1.123';
+        let result = ip.replace(/\d{1,3}$/,'*');
+        document.write(result);
+
+
+        /*let ip = '192.168.1.123';
+        let result = ip.replace(ip.substr(ip.length-1,1),'*');
+        document.write(result);*/
+        document.write('<hr>');
+
+        document.write('<h2>第三题</h2>');
+        document.write('<p id="time"></p>');
+        function qq() {
+            let MyDate = new Date();
+            let time1 = document.querySelector("#time");
+            let Year = MyDate.getFullYear();
+            let Month = MyDate.getMonth() + 1;
+            let Day = MyDate.getDate();
+            let Hours = MyDate.getHours();
+            let Minutes = MyDate.getMinutes();
+            let Seconds = MyDate.getSeconds();
+            let Weekend = MyDate.getDay();
+            time1.innerText = `${Year}年${Month}月${Day}日${Hours}时${Minutes}分${Seconds}秒星期${Weekend}`;
+        }
+        qq();
+        setInterval(qq, 1000);
+        document.write('<hr>');
+        document.write("<h1>第四题</h1>");
+        let str3 = "11323213213";
+        if (str3.length >= 2 && str3.length <= 10) {
+            document.write(`${str3}`);
+            document.write("字符串长度符合要求");
+        } else {
+            document.write(`${str3}`);
+            document.write("字符串长度不符合要求");
+        }
+        document.write("<hr>");
+
+        document.write('<h2>练习五第一题</h2>');
+        let num1 = 1;
+        let num2 = 2;
+        let num3 = 3;
+        let num4 = 4;
+        let num5 = 5;
+        document.write(`最大值是：${Math.max(num1,num2,num3,num4,num5)}`);
+        document.write('<br>');
+        document.write(`最小值是：${Math.min(num1,num2,num3,num4,num5)}`);
+        document.write("<hr>");
+        document.write("<h2>练习题5，第二题</h2>");
+        let b = "";
+        for (let i = 0; i <= 3; i++) {
+            //0-9的随机数
+            let a = Math.floor(Math.random() * 9);
+            b += a + " ";
+        }
+        document.write(`${b}`);
+        document.write("<hr>");
+
+        document.write("<h2>四则运算效果</h2>");
+        const input1 = document.createElement("input");
+        input1.setAttribute("type", "Text");
+        input1.setAttribute("placeholder", "输入a的值");
+        document.body.appendChild(input1);
+        let txt = document.createTextNode("\n");
+        document.body.appendChild(txt);
+        let mysel = document.createElement("select");
+        mysel.id = "citysel";
+        document.body.appendChild(mysel);
+        let obj = document.getElementById("citysel");
+        obj.add(new Option("+", 1));
+        obj.add(new Option("-", 2));
+        obj.add(new Option("*", 3));
+        obj.add(new Option("/", 4));
+        // let index=mysel.selectedIndex;//获取当前选中项的索引
+
+        txt = document.createTextNode("\n");
+        document.body.appendChild(txt);
+
+        const input2 = document.createElement("input");
+        input2.setAttribute("type", "Text");
+        input2.setAttribute("placeholder", "输入b的值");
+        document.body.appendChild(input2);
+        txt = document.createTextNode("\n");
+        document.body.appendChild(txt);
+
+        const button = document.createElement("button");
+        button.textContent = "=";
+        document.body.appendChild(button);
+        txt = document.createTextNode("\n");
+        document.body.appendChild(txt);
+
+        const input3 = document.createElement("input");
+        input3.setAttribute("type", "Text");
+        input3.setAttribute("placeholder", "结果");
+        input3.setAttribute("id", "text3");
+        document.body.appendChild(input3);
+
+        const para = document.createElement("p");
+        document.body.appendChild(para);
+
+        button.addEventListener("click", function () {
+            let index = mysel.selectedIndex; //获取当前选中项的索引
+            let i = mysel.options[index].text; //获取当前选中项的文本内容
+            let jg = 0;
+            let a = input1.value.trim();
+            let b = input2.value.trim();
+            let msg = "";
+            if (a === "" || b === "") {
+                msg = "没有提供a或b的值";
+            } else if (isNaN(a) || isNaN(b)) {
+                msg = "a或b的值不是数字";
+            } else {
+                a -= 0;
+                b -= 0; //进行隐形的字符转化
+                //利用下拉菜单选中的文本内容
+                if (i === "+") {
+                    jg = a + b;
+                }
+                if (i === "-") {
+                    jg = a - b;
+                }
+                if (i === "*") {
+                    jg = a * b;
+                }
+                if (i === "/") {
+                    if (b === 0) {
+                        msg = "除数不可以为0";
+                    } else {
+                        jg = a / b;
+                    }
+                }
+            }
+            para.textContent = msg;
+            // input3.textContent=jg;
+            document.getElementById("text3").value = jg;
+        });
+
+        document.write();
+        //选中当前光标所在区域的内容
+        function selAll() {
+            this.select();
+        }
+        input1.addEventListener("focus", selAll);
+        input2.addEventListener("focus", selAll);
+        document.write("<hr>");
+    </script>
+</body>
+</html>
