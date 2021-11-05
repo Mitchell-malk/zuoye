@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+		li{
+			list-style: none;
+		}
+    </style>
+  </head>
+  <body>
+  <h2 id="one">第一题</h2>
+  <ul id="list">
+	  <li><label><input type="checkbox" name="items" value="1"> 一 </label></li>
+	  <li><label><input type="checkbox" name="items" value="2"> 二 </label></li>
+	  <li><label><input type="checkbox" name="items" value="3"> 三 </label></li>
+	  <li><label><input type="checkbox" name="items" value="4"> 四 </label></li>
+	  <li><label><input type="checkbox" name="items" value="5"> 五 </label></li>
+	  <li><label><input type="checkbox" name="items" value="6"> 六 </label></li>
+  </ul>
+  <input type="checkbox" id="all"> 全选/全不选</br>
+  <input type="button" value="反选" class="btn" id="reverse">
+  <hr/>
+  <h2>第二题</h2>
+  <form action="ok.html" method="get" id="f">
+	  姓名：<input type="text" id="a" /><br />
+	  密码：<input type="password" value="" id="b" /><br />
+	  性别：
+	  <input type="radio" name="c" id="c1" />男
+	  <input type="radio" name="c" id="c2" />女<br />
+	  <label>年龄：</label>
+	  <select name="select1">
+		  <option value="1">20</option>
+		  <option value="2">21</option>
+		  <option value="3">23</option>
+		  <br />
+	  </select>
+	  <br />
+	  <label>爱好：</label>
+	  <input type="checkbox" name="checkbox1" value="c1" id="like1" />读书
+	  <input type="checkbox" name="checkbox2" value="c2" id="like2" />音乐
+	  <input type="checkbox" name="checkbox3" value="c3" id="like3" />上网<br />
+	  <br />
+	  <label>简历：</label>
+	  <textarea name="textarea1" cols="20" rows="7" id="resume"></textarea>
+	  <br />
+	  <input id="submit" type="submit" />
+	  <input type="reset" value="重置" /><br />
+  </form>
+
+  <hr>
+  <script src="../libs/jquery.min.js"></script>
+  <script src="../js/renwu5-4.js"></script>
+  </body>
+</html>
