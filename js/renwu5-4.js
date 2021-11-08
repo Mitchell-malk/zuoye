@@ -2,100 +2,123 @@
  * 第一题
  * */
 
-$(function() {
-    //全选/全不选
-    $("#all").click(function() {
-        $("[name=items]:checkbox").prop("checked", this.checked);
-    });
-    $("[name=items]:checkbox").click(function() {
-        let flag = true;
-        $("[name=items]:checkbox").each(function() {
-            if(!this.checked) {
-                flag = false;
+{
+    const all = document.querySelector('#all');
+    const re = document.querySelector('#re');
+    const list = document.querySelectorAll('.list input');
+    //被控复选框数量
+    const len = list.length;
+    //选中的选框数量
+    let n = 0;
+    //全选、全不选
+    all.onclick = function () {
+        list.forEach(item => item.checked = this.checked);
+        n = this.checked ? len : 0;
+        /*if (this.checked){
+            for (let i = 0; i < len; i++) {
+                list[i].checked = true;
             }
-        });
-        $("#all").attr("checked", flag);
+            n = len;
+        }else {
+            for (let i = 0; i < len; i++) {
+                list[i].checked = false;
+            }
+            n = 0;
+        }*/
+    };
+    re.onclick = function () {
+        // list.forEach(item => item.click());
+        list.forEach(item => item.checked = !item.checked);
+        n = len - n;
+    };
+    //反向控制
+    list.forEach(function (item){
+        item.onclick = function (){
+             this.checked ? n++ : n--;
+            all.checked = n === len;
+        };
     });
-    //反选
-    $("#reverse").click(function() {
-        $("[name=items]:checkbox").each(function() { //遍历每一个复选框
-            // $(this).attr("checked",!$(this).attr("checked")); //jQuery方法取复选框的反向值
-            this.checked = !this.checked; //js方法
-        });
-    });
-});
+}
 
 /**
- * 第二题
+ * 第二题（1）
  * */
-const f = document.querySelector("#f");
-let name = document.querySelector("#a");
-let pw = document.querySelector("#b");
-let man = document.querySelector("#c1");
-let woman = document.querySelector("#c2");
-let like1 = document.querySelector("#like1");
-let like2 = document.querySelector("#like2");
-let like3 = document.querySelector("#like3");
-let resume = document.querySelector("#resume");
-f.onsubmit = function (r) {
-    let pw1 = pw.value.length;
-    let resumelen = resume.value.length;
-    if (name.value === "") {
-        r.preventDefault();
-        alert("姓名不能为空");
-    } else if (pw1 < 2 || pw1 > 10) {
-        r.preventDefault();
-        alert("密码长度二到十位");
-    } else if (man.checked === false && woman.checked === false) {
-        r.preventDefault();
-        alert("必须选一个性别");
-    } else if (
-        like1.checked === false &&
-        like2.checked === false &&
-        like3.checked === false
-    ) {
-        r.preventDefault();
-        alert("必须选择一个爱好");
-    } else if (resumelen < 10) {
-        r.preventDefault();
-        alert("简介必须是十个字符");
-    }
-};
-
-/**
-* 第三题
- * */
-
-let p2 = document.querySelector("#p2");
-const form2 = document.querySelector("#form2");
-let name2 = document.querySelector("#name2");
-let pwd2 = document.querySelector("#pwd2");
-let radio21 = document.querySelector("#radio21");
-let radio22 = document.querySelector("#radio22");
-let like21 = document.querySelector("#like21");
-let like22 = document.querySelector("#like22");
-let like23 = document.querySelector("#like23");
-let check = document.getElementsByName("checkbox2");
-
-form2.onsubmit = function (o) {
-    let pwd2len = pwd2.value.length;
-    let num = 0;
-    for (let i = 0; i < check.length; i++) {
-        if (check[i].checked === true) {
-            num++;
+{
+    const form1 = document.querySelector('#from1');
+    form1.onsubmit = function (e){
+        const name = form1.querySelector('[name = "name"]');
+        const pass = form1.querySelector('[name = "pass"]');
+        const sex = form1.querySelector('[name = "sex"]');
+        const fav = form1.querySelector('[name = "fav"]');
+        const intro = form1.querySelector('[name =" intro"]');
+        let passlen = pass.value.length;
+        //    姓名不为空
+        if (name.value === ''){
+            alert('姓名不能为空！！');
+            e.preventDefault();
+            return false;
+        }
+        //密码长度2-10
+        if (passlen < 2 || passlen > 10){
+            alert('密码长度2-10位');
+            e.preventDefault();
+            return false;
+        }
+    //    性别必须选一项
+    //     if (!sex[0].checked && !sex[1].checked){
+        if (sex[0].checked === sex[1].checked){
+            alert('性别必须选一项！！！');
+            e.preventDefault();
+            return false;
+        }
+    //    爱好必须选一个
+        if (fav[0].checked && fav[1].checked && fav[2].checked === 0) {
+            alert('爱好必须选一个！！！');
+            e.preventDefault();
+            return false;
+        }
+    //    简介至少十个字符
+        if (intro.value.length < 10){
+            alert('简介至少十个字符！！！');
+            e.preventDefault();
+            return false;
         }
     }
-    if (name2.value === "") {
-        o.preventDefault();
-        alert("姓名不能为空");
-    } else if (pwd2len < 2 || pwd2len > 10) {
-        o.preventDefault();
-        alert("密码长度2-10位");
-    } else if (radio21.checked === false && radio22.checked === false) {
-        o.preventDefault();
-        alert("性别必须选择一项");
-    } else if (num < 2) {
-        o.preventDefault();
-        alert("课程至少选择两项");
+}
+/**
+ * 第二题（2）
+ * */
+
+{
+    const form2 = document.querySelector('#from2');
+    form2.onsubmit = function (e) {
+        const name = form2.querySelector('[name = "name"]');
+        const pass = form2.querySelector('[name = "pwd"]');
+        const sex = form2.querySelector('[name = "sex"]');
+        const course = form2.querySelector('[name =" course"]');
+    //    Name is not empty
+        if (name.value === ''){
+            alert('Name is not empty！！');
+            e.preventDefault();
+            return false;
+        }
+        //Password length 2-10
+        if (pass.value.length < 2 || pass.value.length > 10){
+            alert('Password length 2-10!!!');
+            e.preventDefault();
+            return false;
+        }
+        //    Gender must choose one
+        if (sex[0].checked === sex[1].checked){
+            alert('Gender must choose one！！！');
+            e.preventDefault();
+            return false;
+        }
+    //    Choose at least two courses
+        if (course[0].checked + course[1].checked + course[2].checked < 2){
+            alert('Choose at least two courses！！！');
+            e.preventDefault();
+            return false;
+        }
     }
-};
+}
