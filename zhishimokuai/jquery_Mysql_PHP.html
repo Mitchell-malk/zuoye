@@ -6,66 +6,65 @@
   </head>
   <body>
     <h2>第一题</h2>
-	<label>
-		<input type="text" name="name" class="input" />
-	</label>
-	<input type="button" value="添加" class="Add" />
-	<ol></ol>
-    <br /><br />
+    <label>
+      <input type="text" name="name" class="input" />
+    </label>
+    <input type="button" value="添加" class="Add" />
+    <ol></ol>
     <input type="button" value="清空内容" class="Empty" />
     <hr />
     <script src="../libs/jquery.min.js"></script>
     <script>
-		/**
-		 * 第一题
-		 * */
-
-		$(function (){
-
-			$(".Add").on('click',function () {
-				let a = $('[type=text]').val();
-				//没填写内容
-				if (a.length === 0){
-					alert("还没填写内容！！！");
-				}else {
-					//删除value
-					$('.input').val(function () {
-						return this.value = '';
-					});
-					//在输入框下面添加内容
-					// let x=$('<li>');
-					$('ol').prepend(`<li><span>x</span>  ${a}</li>`);
-					$('span').click(function(){
-						$(this).parent().remove();
-					}) ;
-				}
-				// 清空列表
-				$('.Empty').click(function () {
-					$('li').remove();
-				});
-			});
-			$('p').prepend(`1C, 2B, 3C, 4D, 5D, 6B, 7C, 8D, 9A, 10A, 11C, 12A, 13B, 14D, 15B, 16C, 17A, 18B, 19A, 20D `)
-		});
-	</script>
-	<h2>第二题</h2>
-	<p></p>
-	<h3>第三题</h3>
-  	<pre>
+      /**
+       * 第一题
+       * */
+      $(function () {
+        $(".Add").on("click", function () {
+          let a = $("[type=text]").val();
+          //没填写内容
+          if (a.length === 0) {
+            alert("还没填写内容！！！");
+          } else {
+            //删除value
+            $(".input").val(function () {
+              return (this.value = "");
+            });
+            //在输入框下面添加内容
+            // let x=$('<li>');
+            $("ol").prepend(`<li><span>&times;</span>  ${a}</li>`);
+            $("span").click(function () {
+              $(this).parent().remove();
+            });
+          }
+          // 清空列表
+          $(".Empty").click(function () {
+            $("li").remove();
+          });
+        });
+        $("p").prepend(
+          `1C, 2B, 3C, 4B, 5D, 6B, 7C, 8D, 9A, 10A, 11C, 12A, 13B, 14D, 15B, 16C, 17A, 18B, 19A, 20D `
+        );
+      });
+    </script>
+    <h2>第二题</h2>
+    <p></p>
+    <h3>第三题</h3>
+    <pre>
 	for ($i = 1; $i <= 100; $i++){
     	echo $i;
 	}
 	</pre>
-  <h2>第四题</h2>
-  <pre>
+    <h2>第四题</h2>
+    <pre>
 	for ($o = 1; $o <= 100; $o++) {
 		if ($o % 2 == 0) {
 			echo $o, " ";
 		}
 	}
   </pre>
-  <h2>第五题</h2>
-  <pre>
-	for ($w=1; $w<=100; $w++){
+    <h2>第五题</h2>
+    <pre>
+	for ($w=1; $w <=100; $w++){
     if($w%3==0 && $w%5==0){
         echo "foobar"," ";
     }else if($w%3==0){
